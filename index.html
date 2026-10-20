@@ -79,48 +79,63 @@
     </section>
 
     <!-- Music Section -->
-    <section id="music">
-        <h2>Music</h2>
-        <iframe 
-            width="100%" 
-            height="166" 
-            scrolling="no" 
-            frameborder="no"
-            src="YOUR_SOUNDCLOUD_EMBED_URL">
-        </iframe>
-    </section>
+<section id="music">
+    <h2>Music</h2>
+
+    <iframe 
+        width="100%" 
+        height="450" 
+        scrolling="no" 
+        frameborder="no" 
+        allow="autoplay; encrypted-media"
+        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2317089609&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+    </iframe>
+</section>
 
     <!-- Timer Script -->
-    <script>
-        let seconds = 0;
-        let timerInterval;
+  <script>
+let seconds = 0;
+let timerInterval;
 
-        function updateTimer() {
-            seconds++;
-            document.getElementById("timer-display").textContent = seconds;
-        }
+function formatTime(totalSeconds) {
+    let mins = Math.floor(totalSeconds / 60);
+    let secs = totalSeconds % 60;
 
-        function startTimer() {
-            timerInterval = setInterval(updateTimer, 1000);
-        }
+    if (secs < 10) secs = "0" + secs;
+    return mins + ":" + secs;
+}
 
-        function stopTimer() {
-            clearInterval(timerInterval);
-        }
+function updateTimer() {
+    seconds--;
+    document.getElementById("timer-display").textContent = formatTime(seconds);
 
-        function resetTimer() {
-            stopTimer();
-            seconds = 0;
-            document.getElementById("timer-display").textContent = "00:00";
-        function updateTimer() {
-            seconds--;
-            document.getElementByID("timer-display".textcontent = formattime(seconds);
+    if (seconds <= 0) {
+        clearInterval(timerInterval);
+    }
+}
 
-            if (seconds <= 0)
-                clearinterval(timerInterval);
-            }
-        }
-    </script>
+function startTimer() {
+    clearInterval(timerInterval);
+    timerInterval = setInterval(updateTimer, 1000);
+}
+
+function stopTimer() {
+    clearInterval(timerInterval);
+}
+
+function resetTimer() {
+    clearInterval(timerInterval);
+    seconds = 0;
+    document.getElementById("timer-display").textContent = "00:00";
+}
+
+function setTimer(minutes) {
+    seconds = minutes * 60;
+    document.getElementById("timer-display").textContent = formatTime(seconds);
+}
+</script>
+
+       
     
 </body>
 </html>
