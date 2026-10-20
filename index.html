@@ -1,11 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title> studydotplay</title>
-  </head>
-  <body>
-    <h1> Studydot play </h1>
-    <p> A site to help someone learn! </p>
-  </body>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>PlayDotStudy Prototype</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>PlayDotStudy Prototype</h1>
+        <p>A simple learning + gaming experiment</p>
+    </header>
+
+    <!-- Timer Section -->
+    <section id="timer">
+        <h2>Timer</h2>
+        <p id="timer-display">00:00</p>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="stopTimer()">Stop</button>
+        <button onclick="resetTimer()">Reset</button>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game">
+        <h2>Game</h2>
+        <iframe 
+            src="YOUR_SCRATCH_EMBED_URL"
+            allowfullscreen
+            width="485"
+            height="402">
+        </iframe>
+    </section>
+
+    <!-- Music Section -->
+    <section id="music">
+        <h2>Music</h2>
+        <iframe 
+            width="100%" 
+            height="166" 
+            scrolling="no" 
+            frameborder="no"
+            src="YOUR_SOUNDCLOUD_EMBED_URL">
+        </iframe>
+    </section>
+
+    <!-- Timer Script -->
+    <script>
+        let seconds = 0;
+        let timerInterval;
+
+        function updateTimer() {
+            seconds++;
+            document.getElementById("timer-display").textContent = seconds;
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+        }
+
+        function resetTimer() {
+            stopTimer();
+            seconds = 0;
+            document.getElementById("timer-display").textContent = "00:00";
+        }
+    </script>
+
+</body>
 </html>
