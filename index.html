@@ -102,9 +102,6 @@ iframe {
     margin: 10px auto;
     width: 520px;
 }
-#buddy {
-    text-align: center;
-}
 
 #buddy-img {
     width: 150px;
@@ -119,23 +116,54 @@ iframe {
 #buddy-img:active {
     transform: scale(0.95);
 }
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.top-row > * {
+    flex: 1;
+}
+#timer-section {
+    margin-bottom: 0;
+}
+
+.top-row header,
+.top-row #timer-section {
+    width: 50%;
+}
+.game-layout {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#buddy {
+    width: 180px;
+    text-align: center;
+}
+
+
 </style>
 </head>
 
 <body>
 <div id="wrapper">
 
-    <!-- Header -->
+    <div class="top-row">
+
     <header>
         <h1>PlayDotStudy ＞︿＜</h1>
         <p>play and learn! ❤️</p>
     </header>
 
-    <!-- Timer Section -->
     <section id="timer-section">
         <h2>tracker! 📌</h2>
 
-        <!-- Progress bar goes HERE -->
         <div id="progress-container">
             <div id="progress-bar"></div>
         </div>
@@ -151,9 +179,14 @@ iframe {
         <button onclick="setTimer(15)">15 minutes</button>
     </section>
 
+</div>
+
     <!-- Game Section -->
     <section id="game">
-        <iframe 
+
+    <div class="game-layout">
+
+        <iframe
             src="https://scratch.mit.edu/projects/1181830300/embed"
             allowtransparency="true"
             width="485"
@@ -162,26 +195,29 @@ iframe {
             scrolling="no"
             allowfullscreen>
         </iframe>
-    </section>
-    
-<section id="buddy">
-    <h2>Study Buddy</h2>
 
-    <img
-        id="buddy-img"
-        src="bunny.png"
-        alt="Study Buddy"
-        onclick="petBuddy()">
+        <div id="buddy">
 
-    <p>Friendship Points: <span id="points">0</span></p>
+            <h2>pompompurin! ⭐</h2>
 
-    <audio id="boop">
-        <source src="boop.mp3" type="audio/mpeg">
-    </audio>
+            <img
+                id="buddy-img"
+                src="https://i.postimg.cc/8C7X63R8/yellow_6.png"
+                alt="Study Buddy"
+                onclick="petBuddy()">
+
+            <p>
+                clicks:
+                <span id="points">0</span>
+            </p>
+
+        </div>
+
+    </div>
+
 </section>
 
     <!-- Music Section -->
-    <section id="music">
         <div id="music-player">
             <iframe 
                 width="100%" 
@@ -192,7 +228,6 @@ iframe {
                 src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2317089609&color=%23000000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true">
             </iframe>
         </div>
-    </section>
 <script>
 let points = 0;
 
