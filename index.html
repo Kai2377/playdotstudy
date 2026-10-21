@@ -183,7 +183,7 @@ iframe {
     </header>
 
     <section id="timer-section">
-        <h2>tracker! 📌</h2>
+        <h2>pomodoro timer 🍰</h2>
 
         <div id="progress-container">
             <div id="progress-bar"></div>
@@ -268,7 +268,6 @@ function petBuddy() {
     document.getElementById("boop").play();
 }
 </script>
-</div>
 
 <!-- Progress Bar Script -->
 <script>
@@ -335,7 +334,35 @@ document.addEventListener("mouseup", () => {
     isDragging = false;
     player.style.cursor = "grab";
 });
+const tips = [
+    "Take a break when your timer ends! ❤️",
+    "Drink water while studying!",
+    "Why not co-study with someone?",
+    "Take some notes on a topic you find hard!",
+    "Don't get distracted!",
+    "If you're bored, try clicking pompompurin!",
+];
+
+function newTip() {
+    const random =
+        Math.floor(Math.random() * tips.length);
+
+    document.getElementById("tip-box").textContent =
+        tips[random];
+}
 </script>
+<section id="tips">
+    <h2>study tips 🍓</h2>
+
+    <button onclick="newTip()">
+        show tip!
+    </button>
+
+    <p id="tip-box">
+        click the button!
+    </p>
+</section>
+
 
 </body>
 </html>
