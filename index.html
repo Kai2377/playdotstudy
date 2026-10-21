@@ -63,6 +63,7 @@ header {
     border-radius: 25px;
     padding: 25px;
     border: 4px solid #ffb3e6;
+    text-align: center;
 }
 
 iframe {
@@ -101,14 +102,28 @@ iframe {
     margin: 10px auto;
     width: 520px;
 }
+#buddy {
+    text-align: center;
+}
 
+#buddy-img {
+    width: 150px;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+#buddy-img:hover {
+    transform: scale(1.05);
+}
+
+#buddy-img:active {
+    transform: scale(0.95);
+}
 </style>
 </head>
 
 <body>
 <div id="wrapper">
-<img src="https://i.postimg.cc/3NBD0750/pink.gif" class="decor">
-
 
     <!-- Header -->
     <header>
@@ -118,7 +133,7 @@ iframe {
 
     <!-- Timer Section -->
     <section id="timer-section">
-        <h2>Timer</h2>
+        <h2>tracker! 📌</h2>
 
         <!-- Progress bar goes HERE -->
         <div id="progress-container">
@@ -148,6 +163,22 @@ iframe {
             allowfullscreen>
         </iframe>
     </section>
+    
+<section id="buddy">
+    <h2>Study Buddy</h2>
+
+    <img
+        id="buddy-img"
+        src="bunny.png"
+        alt="Study Buddy"
+        onclick="petBuddy()">
+
+    <p>Friendship Points: <span id="points">0</span></p>
+
+    <audio id="boop">
+        <source src="boop.mp3" type="audio/mpeg">
+    </audio>
+</section>
 
     <!-- Music Section -->
     <section id="music">
@@ -162,7 +193,17 @@ iframe {
             </iframe>
         </div>
     </section>
+<script>
+let points = 0;
 
+function petBuddy() {
+    points++;
+
+    document.getElementById("points").textContent = points;
+
+    document.getElementById("boop").play();
+}
+</script>
 </div>
 
 <!-- Progress Bar Script -->
