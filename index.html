@@ -266,7 +266,11 @@ function petBuddy() {
 
     document.getElementById("points").textContent = points;
 
-    let message = "click me! ⭐";
+    let message = "0 points wow ⭐";
+
+    if (points >= 1) {
+        meesage = "yay!";
+    }
 
     if (points >= 10) {
         message = "hi friend! 🌸";
@@ -380,6 +384,9 @@ const tips = [
     "Take some notes on a topic you find hard!",
     "Don't get distracted!",
     "If you're bored, try clicking pompompurin!",
+    "Maybe I'll turn this site into somethnig fun..",
+    "Javascript is hard 😭",
+    "Maybe walk around!",
 ];
 
 function newTip() {
