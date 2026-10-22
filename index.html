@@ -266,7 +266,7 @@ function petBuddy() {
 
     document.getElementById("points").textContent = points;
 
-    let message = "0 points wow ⭐";
+    let message = "click me! ⭐";
 
     if (points >= 10) {
         message = "hi friend! 🌸";
@@ -280,28 +280,13 @@ function petBuddy() {
         message = "great job today! ⭐";
     }
 
-    if (points >= 75) {
+    if (points >= 100) {
         message = "wow!! 100 clicks!! 💖";
     }
 
-    if (points >= 100) {
+    if (points >= 200) {
         message = "pompompurin is proud of you! 🧸";
     }
-
-    if (points >= 110) {
-        message = "why not play the game? 🪽"
-    }
-
-    if (points >= 120) {
-        message = "wow!!!! keep clicking!" 
-    }
-    
-    if (points >= 200) {
-        message = "wow!! you're persistent
-    }
-
-    if (points >= 300)
-        message = "300! that's so many 🤩"
 
     document.getElementById("buddy-message").textContent = message;
 }
@@ -380,9 +365,6 @@ const tips = [
     "Take some notes on a topic you find hard!",
     "Don't get distracted!",
     "If you're bored, try clicking pompompurin!",
-    "Maybe I'll turn this site into somethnig fun..",
-    "Javascript is hard 😭",
-    "Maybe walk around!",
 ];
 
 function newTip() {
