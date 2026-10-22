@@ -204,8 +204,6 @@ iframe {
 
     <!-- Game Section -->
     <section id="game">
-
-    <div class="game-layout">
  
 
     <img
@@ -243,6 +241,9 @@ iframe {
         </div>
 
     </div>
+        <p id="buddy-message">
+click me! ⭐
+</p>
 
 </section>
 
@@ -265,8 +266,31 @@ function petBuddy() {
 
     document.getElementById("points").textContent = points;
 
-    document.getElementById("boop").play();
+    let message = "click me! ⭐";
+
+    if (points >= 10) {
+        message = "hi friend! 🌸";
+    }
+
+    if (points >= 25) {
+        message = "you're studying so hard! 🍓";
+    }
+
+    if (points >= 50) {
+        message = "great job today! ⭐";
+    }
+
+    if (points >= 100) {
+        message = "wow!! 100 clicks!! 💖";
+    }
+
+    if (points >= 200) {
+        message = "pompompurin is proud of you! 🧸";
+    }
+
+    document.getElementById("buddy-message").textContent = message;
 }
+
 </script>
 
 <!-- Progress Bar Script -->
@@ -362,7 +386,6 @@ function newTip() {
         click the button!
     </p>
 </section>
-
 
 </body>
 </html>
