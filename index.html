@@ -280,13 +280,28 @@ function petBuddy() {
         message = "great job today! ⭐";
     }
 
-    if (points >= 100) {
+    if (points >= 75) {
         message = "wow!! 100 clicks!! 💖";
     }
 
-    if (points >= 200) {
+    if (points >= 100) {
         message = "pompompurin is proud of you! 🧸";
     }
+
+    if (points >= 110) {
+        message = "why not play the game? 🪽"
+    }
+
+    if (points >= 120) {
+        message = "wow!!!! keep clicking!" 
+    }
+    
+    if (points >= 200) {
+        message = "wow!! you're persistent
+    }
+
+    if (points >= 300)
+        message = "300! that's so many 🤩"
 
     document.getElementById("buddy-message").textContent = message;
 }
